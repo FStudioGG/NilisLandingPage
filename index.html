@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nili Salgados | Peça o seu delivery</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nili-red': '#D32E31', 
+                        'nili-yellow': '#F5B041', 
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #D32E31;
+        }
+
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .button-hover-effect {
+            transition: all 0.3s ease;
+        }
+        
+        .button-hover-effect:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-nili-red text-white min-h-screen flex flex-col justify-between overflow-x-hidden font-sans">
+
+    <main class="flex-grow flex flex-col items-center justify-center px-4 py-12 w-full max-w-3xl mx-auto">
+        
+        <div class="mb-8 relative z-10 w-64 md:w-80 float-animation">
+            <img src="./img/NiliLogo.PNG" alt="Nili Salgados Logo" class="w-full h-auto drop-shadow-2xl rounded-xl">
+        </div>
+
+        <div class="text-center mb-12 z-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-md">
+                Bateu a fome?
+            </h1>
+            <p class="text-lg md:text-xl font-semibold mb-2 opacity-90">
+                Peça agora os melhores salgados da região!
+            </p>
+            <p class="text-md opacity-80">
+                Escolha o seu app favorito e aproveite:
+            </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-6 w-full px-4 md:px-12 z-10 mb-6">
+            
+            <a href="#" class="button-hover-effect flex items-center justify-center gap-3 bg-white text-red-600 font-bold text-xl py-4 px-8 rounded-full shadow-lg border-4 border-transparent hover:border-red-200 flex-1 relative overflow-hidden group">
+                <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-red-100 rounded-full group-hover:w-full group-hover:h-56 opacity-10"></span>
+                <i class="fa-solid fa-motorcycle text-2xl relative z-10"></i>
+                <span class="relative z-10">Pedir no iFood</span>
+            </a>
+
+            <a href="#" class="button-hover-effect flex items-center justify-center gap-3 bg-yellow-400 text-gray-900 font-bold text-xl py-4 px-8 rounded-full shadow-lg border-4 border-transparent hover:border-yellow-200 flex-1 relative overflow-hidden group">
+                 <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-white rounded-full group-hover:w-full group-hover:h-56 opacity-20"></span>
+                <i class="fa-solid fa-utensils text-2xl relative z-10"></i>
+                <span class="relative z-10">Pedir no 99Food</span>
+            </a>
+        </div>
+        
+        <div class="w-full px-4 md:px-12 z-10 flex justify-center">
+            <a href="https://wa.me/5521966045940" target="_blank" rel="noopener noreferrer" class="button-hover-effect flex items-center justify-center gap-2 bg-black/20 hover:bg-black/30 text-white font-medium text-lg py-3 px-6 rounded-full transition-colors border border-white/20">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                <span>Contato: (21) 96604-5940</span>
+            </a>
+        </div>
+
+        <div class="mt-8 animate-bounce text-3xl opacity-70">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+
+    </main>
+
+    <footer class="bg-black/20 backdrop-blur-sm text-white/80 py-6 text-center text-sm w-full">
+        <div class="container mx-auto px-4">
+            <p class="opacity-75 text-xs">
+                &copy; <span id="currentYear"></span> Nili Salgados é uma marca FStudio. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
